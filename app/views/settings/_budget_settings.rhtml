@@ -1,3 +1,4 @@
+<% time_log_helper = Object.new.extend(TimelogHelper) %>
 <p>
   <%= l(:message_budget_settings) %>
 </p>
@@ -14,3 +15,6 @@
   <label><%= l(:label_profit) %></label><%= text_field_tag 'settings[budget_profit]', @settings['budget_profit'], :size => 15 %>
 </p>
 
+<p>
+  <label><%= l(:label_non_billable_activity) %></label><%= select_tag "settings[budget_non_billable_activity]", options_for_select(time_log_helper.activity_collection_for_select_options, @settings['budget_non_billable_activity'].to_i), :required => true %>
+</p>
