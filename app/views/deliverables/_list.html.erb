@@ -3,6 +3,8 @@
       <%= content_tag('th', " ") %>
       <%= sort_header_tag("#{Deliverable.table_name}.id", :caption => '#', :default_order => 'desc') %>
       <%= sort_header_tag("score", :caption => l(:caption_score), :default_order => 'desc') if allowed_management? %>
+      <%= sort_header_tag("hours_estimated", :caption => l(:label_hours_estimated)) %>
+      <%= sort_header_tag("hours_used", :caption => l(:label_hours_used)) %>
       <%= sort_header_tag("#{Deliverable.table_name}.subject", :caption => l(:caption_subject)) %>
       <%= sort_header_tag("total_budget", :caption => l(:caption_budget)) if allowed_management? %>
       <%= sort_header_tag("labor_budget", :caption => l(:caption_labor_budget)) if allowed_management? %>
